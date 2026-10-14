@@ -1,9 +1,7 @@
 name: release
 
 on:
-  push:
-    tags:
-      - '*'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -12,6 +10,7 @@ jobs:
   npm:
     name: publish-to-npm
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     permissions:
       contents: read
@@ -35,6 +34,7 @@ jobs:
   jsr:
     name: publish-to-jsr
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     permissions:
       contents: read
